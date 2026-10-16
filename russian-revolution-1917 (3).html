@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Russian Revolution of 1917</title>
+  <meta name="description" content="The Russian Revolution of 1917: what made it succeed and what it can teach about revolutions today.">
+  <style>
+    :root {
+      --bg: #0c0e12;
+      --surface: #161a22;
+      --surface-2: #1e2430;
+      --text: #e6e8ec;
+      --muted: #9ba3b0;
+      --accent: #c62828;
+      --accent-soft: #ef9a9a;
+      --gold: #d4a84b;
+      --border: #2a3140;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    header {
+      background: rgba(12, 14, 18, 0.93);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .nav-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.85rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.86rem;
+      transition: all 0.15s;
+    }
+    nav a:hover {
+      color: var(--text);
+      background: var(--surface-2);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.2rem 1.4rem 2.2rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(198, 40, 40, 0.18);
+      color: var(--accent-soft);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(198, 40, 40, 0.4);
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.02em;
+    }
+    .hero .lead {
+      max-width: 680px;
+      margin: 0 auto 1.4rem;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+    .claim-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1.15rem 1.35rem;
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.02rem;
+    }
+    .claim-box strong { color: var(--gold); }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.4rem 3.5rem;
+    }
+    section {
+      margin-bottom: 3.4rem;
+      scroll-margin-top: 4.5rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.65rem;
+      color: var(--accent-soft);
+    }
+    p { margin-bottom: 0.95rem; color: #c8ccd4; }
+    ul, ol { margin: 0.65rem 0 1.15rem 1.35rem; color: #c8ccd4; }
+    li { margin-bottom: 0.38rem; }
+    strong { color: var(--text); }
+
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 1.15rem;
+      margin: 1.25rem 0;
+    }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: rgba(198, 40, 40, 0.45); }
+    .card h4 {
+      font-size: 1.02rem;
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+    .card p { font-size: 0.94rem; margin-bottom: 0; }
+
+    .criteria {
+      background: var(--surface-2);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.2rem 0;
+    }
+    .criteria ol { margin-left: 1.15rem; }
+    .criteria li { margin-bottom: 0.5rem; }
+
+    .timeline {
+      position: relative;
+      margin: 1.4rem 0;
+      padding-left: 1.55rem;
+      border-left: 3px solid var(--accent);
+    }
+    .t-item {
+      position: relative;
+      margin-bottom: 1.3rem;
+      padding-left: 0.35rem;
+    }
+    .t-item::before {
+      content: "";
+      position: absolute;
+      left: -1.9rem;
+      top: 0.32rem;
+      width: 11px;
+      height: 11px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--bg);
+    }
+    .t-date {
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 0.91rem;
+      margin-bottom: 0.18rem;
+    }
+    .t-content { color: #c8ccd4; font-size: 0.96rem; }
+
+    .figure {
+      display: flex;
+      gap: 0.95rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+      margin-bottom: 0.85rem;
+    }
+    .fig-initial {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent), #7f0000);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+    }
+    .fig-body h4 { margin: 0 0 0.2rem; font-size: 1.02rem; }
+    .fig-role { font-size: 0.8rem; color: var(--accent-soft); margin-bottom: 0.35rem; }
+    .fig-body p { margin: 0; font-size: 0.92rem; }
+
+    .callout {
+      background: var(--surface-2);
+      border-left: 4px solid var(--gold);
+      padding: 0.95rem 1.15rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.2rem 0;
+      font-size: 0.96rem;
+      color: #d0d4dc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      font-size: 0.93rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--accent-soft);
+      font-weight: 600;
+    }
+    td { background: var(--surface); color: #c8ccd4; }
+
+    .rec-list { display: grid; gap: 0.85rem; margin: 1.15rem 0; }
+    .rec-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.95rem 1.1rem;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .rec-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+
+    .bib-list {
+      list-style: none;
+      margin: 0.9rem 0;
+    }
+    .bib-list li {
+      margin-bottom: 0.9rem;
+      padding-left: 1.4rem;
+      text-indent: -1.4rem;
+      color: #c8ccd4;
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.4rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    @media (max-width: 640px) {
+      .nav-wrap { flex-direction: column; align-items: flex-start; }
+      .hero { padding-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a href="#" class="logo">Russian Revolution 1917</a>
+      <nav>
+        <a href="#argument">Argument</a>
+        <a href="#overview">Overview</a>
+        <a href="#causes">Causes</a>
+        <a href="#february">February</a>
+        <a href="#october">October</a>
+        <a href="#figures">Figures</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#comparison">Comparison</a>
+        <a href="#current">Iran 2022</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#bibliography">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="argument">
+    <div class="hero-badge">Revolutionary Analysis</div>
+    <h1>The Russian Revolution of 1917</h1>
+    <p class="lead">
+      Two uprisings in a year ended over 300 years of Romanov rule and put the Bolsheviks in power. What gave the Bolsheviks success. What can we learn about revolutions today?
+    </p>
+    <div class="claim-box">
+      <strong>Central Claim:</strong> A revolutionary movement succeeds when it blends three parts: (1) a broadly shared vision of the new order, (2) organized power to seize and keep institutions, and (3) the ability to stop or absorb the state’s force. The Russian Revolution of 1917 met all three. The “Woman, Life, Freedom” protests of 2022 to present have mainly met the first part.
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <h2>What Counts as Revolutionary Success?</h2>
+      <p>
+        In this analysis a successful revolutionary movement is defined by four criteria taken from history:
+      </p>
+      <div class="criteria">
+        <ol>
+          <li><strong>Transfer of sovereign power</strong> — The old regime loses the power to rule and a new authority takes its place.</li>
+          <li><strong>Replacement</strong> — Key state institutions such as the army, police, bureaucracy and legal system are taken over, neutralised or rebuilt under new control.</li>
+          <li><strong>Legitimacy or acquiescence</strong> — Enough of the people accept or cannot effectively resist the new order.</li>
+          <li><strong>Durability</strong> — The new power structure survives the counter-revolutionary reaction, such as civil war, foreign intervention or internal splits.</li>
+        </ol>
+      </div>
+      <p>
+        The Russian Revolution of 1917 is studied in depth because it is one of the modern cases where a radical party really seized and kept state power. The French Revolution is used as a comparison. These patterns are then applied to the “Woman, Life, Freedom” movement that began after the death of Mahsa (Jina) Amini in September 2022.
+      </p>
+    </section>
+
+    <section id="overview">
+      <h2>Overview of 1917</h2>
+      <p>
+        The Russian Revolution had two uprisings. The February Revolution (March in the Gregorian calendar) overthrew Tsar Nicholas II and ended the Romanov dynasty after more than 300 years. A Provisional Government took power but shared authority unevenly with the Petrograd Soviet of Workers’ and Soldiers’ Deputies. A situation known as “dual power.”
+      </p>
+      <p>
+        Eight months later the October Revolution (November by the calendar) saw Vladimir Lenin’s Bolsheviks seize control in a coordinated takeover. They created a government based on the soviets, pulled Russia out of World War I and set the stage for the Civil War and the eventual creation of the Soviet Union in 1922.
+      </p>
+      <div class="callout">
+        <strong>Note on dates:</strong> Russia still used the Julian calendar in 1917. February and October refer to the old-style dates. In the Gregorian calendar the events happened in March and November.
+      </div>
+    </section>
+
+    <section id="causes">
+      <h2>Causes</h2>
+      <p>
+        The revolution did not erupt overnight. Decades of tension, rigid politics and the disaster of World War I combined to make the old order unsustainable.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Autocratic Rule</h4>
+          <p>Nicholas II resisted reform. The Duma created after 1905 had limited power and was repeatedly dissolved when it challenged the throne.</p>
+        </div>
+        <div class="card">
+          <h4>War Exhaustion</h4>
+          <p>Russia suffered losses in World War I. Millions of casualties, collapsing morale and a government unable to supply or lead its armies.</p>
+        </div>
+        <div class="card">
+          <h4>Economic Crisis</h4>
+          <p>Food and fuel shortages hit the cities hard. Inflation soared. Bread rationing in early 1917 triggered panic and mass protests in Petrograd.</p>
+        </div>
+        <div class="card">
+          <h4>Social Inequality</h4>
+          <p>Peasants (the majority) still lacked secure land rights. Urban workers faced harsh conditions, long hours and little political voice.</p>
+        </div>
+        <div class="card">
+          <h4>1905 Revolution</h4>
+          <p>The earlier uprising forced concessions but left core problems unresolved, teaching radicals that the regime could be challenged.</p>
+        </div>
+        <div class="card">
+          <h4>Loss of Legitimacy</h4>
+          <p>Court scandals, military defeats and the perception of a weak out-of-touch monarchy eroded loyalty among elites and the army.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="february">
+      <h2>The February Revolution</h2>
+      <p>
+        What began as protests over bread shortages quickly became a full-scale revolt against the monarchy.
+      </p>
+      <p>
+        On 23 February 1917 (8 March Gregorian) — International Women’s Day — female textile workers in Petrograd marched for bread. Strikes spread quickly. Within days hundreds of thousands of workers were on the streets. When the tsar ordered troops to restore order many soldiers refused to fire and joined the demonstrators instead.
+      </p>
+      <p>
+        On 2 March (15 March) Nicholas II abdicated. His brother Grand Duke Michael declined the throne unless it was offered by a constituent assembly. More than three centuries of Romanov rule were over.
+      </p>
+      <p>
+        A Provisional Government was formed, initially led by Prince Georgy Lvov and later by Alexander Kerensky. At the same time the Petrograd Soviet rose as a powerful alternative centre of authority creating dual power.
+      </p>
+      <div class="callout">
+        The February Revolution was largely spontaneous. No single party planned or controlled it. Soldiers’ mutiny proved decisive: once the garrison sided with the crowds the old regime collapsed.
+      </div>
+    </section>
+
+    <section id="october">
+      <h2>The October Revolution</h2>
+      <p>
+        The Provisional Government struggled from the start. It kept Russia in the war, failed to solve the land question and lost support as economic conditions worsened. Bolshevik influence grew, especially after Lenin returned from exile in April 1917 and issued his April Theses demanding “Peace, Land and Bread” and “All Power to the Soviets.”
+      </p>
+      <p>
+        Key turning points included the failed July Days uprising, the Kornilov Affair (an attempted coup that the Bolsheviks helped defeat) and the Bolsheviks winning majorities in the Petrograd and Moscow soviets by September.
+      </p>
+      <p>
+        On the night of 24–25 October 1917 (6–7 November Gregorian) Bolshevik Red Guards and soldiers organised by the Military Revolutionary Committee under Leon Trotsky’s direction seized points in Petrograd. The Winter Palace fell with little bloodshed. Most ministers were arrested; Kerensky fled.
+      </p>
+      <p>
+        The Second Russian Congress of Soviets endorsed the transfer of power. Lenin’s new government immediately issued the Decree on Peace and the Decree on Land appealing directly to war-weary soldiers and land-hungry peasants.
+      </p>
+    </section>
+
+    <section id="figures">
+      <h2>Key Figures</h2>
+      <div class="figure">
+        <div class="fig-initial">N</div>
+        <div class="fig-body">
+          <h4>Nicholas II</h4>
+          <div class="fig-role">Last Tsar of Russia</div>
+          <p>Ruled from 1894 until his abdication in March 1917. His rigid belief in autocracy, poor handling of the war and detachment from popular suffering made him a symbol of a failing system. He and his family were later executed by the Bolsheviks in 1918.</p>
+        </div>
+      </div>
+      <div class="figure">
+        <div class="fig-initial">L</div>
+        <div class="fig-body">
+          <h4>Vladimir Lenin</h4>
+          <div class="fig-role">Leader of the Bolsheviks</div>
+          <p>Returned from exile in April 1917 and pushed for an immediate socialist revolution. His slogans and organisational drive were central to the October seizure of power. He became head of the Soviet government.</p>
+        </div>
+      </div>
+      <div class="figure">
+        <div class="fig-initial">T</div>
+        <div class="fig-body">
+          <h4>Leon Trotsky</h4>
+          <div class="fig-role">Organiser of the October uprising</div>
+          <p>Chairman of the Petrograd Soviet and key architect of the Military Revolutionary Committee. His organisational skill was crucial in the bloodless takeover of the capital.</p>
+        </div>
+      </div>
+      <div class="figure">
+        <div class="fig-initial">K</div>
+        <div class="fig-body">
+          <h4>Alexander Kerensky</h4>
+          <div class="fig-role">Head of the Provisional Government</div>
+          <p>Became the dominant figure after July 1917. He tried to hold the middle ground between conservatives and radicals but lost support by continuing the war and failing to deliver rapid reform.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2>Timeline of 1917</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-date">23 February (8 March)</div>
+          <div class="t-content">International Women’s Day marches and strikes begin in Petrograd over bread shortages. Protests escalate rapidly.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">27 February – 2 March</div>
+          <div class="t-content">Soldiers join the crowds. Nicholas II abdicates. Dual power begins: Provisional Government and Petrograd Soviet.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">3 April (16 April)</div>
+          <div class="t-content">Lenin returns to Petrograd and presents the April Theses calling for soviet power and an end to the war.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">3–7 July (16–20 July)</div>
+          <div class="t-content">July Days: demonstrations in Petrograd. Bolsheviks are temporarily suppressed; Lenin goes into hiding.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Late August</div>
+          <div class="t-content">Kornilov Affair: failed move against the government. Bolsheviks gain credibility by helping defend Petrograd.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">September</div>
+          <div class="t-content">Bolsheviks win majorities in the Petrograd and Moscow soviets. Trotsky becomes chairman of the Petrograd Soviet.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">24–25 October (6–7 November)</div>
+          <div class="t-content">October Revolution: Bolsheviks seize points in Petrograd and take the Winter Palace. Power is transferred to the soviets.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">26 October onward</div>
+          <div class="t-content">Decree on Peace and Decree on Land issued. Council of People’s Commissars formed under Lenin. Civil conflict intensifies.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <h2>Comparison with the French Revolution</h2>
+      <p>
+        Both revolutions began with moderate phases that failed to solve core crises, then saw radical minorities take control during moments of dual power or institutional breakdown.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>French Revolution</th>
+            <th>Russian Revolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Initial trigger</td>
+            <td>Fiscal crisis + Estates-General</td>
+            <td>War exhaustion + food shortages</td>
+          </tr>
+          <tr>
+            <td>Early phase</td>
+            <td>Moderate constitutional monarchy</td>
+            <td>Moderate Provisional Government</td>
+          </tr>
+          <tr>
+            <td>Radical turn</td>
+            <td>Jacobins / Committee of Public Safety</td>
+            <td>Bolsheviks / Sovnarkom</td>
+          </tr>
+          <tr>
+            <td>Leadership</td>
+            <td>Multiple factions; Robespierre central for a time</td>
+            <td>Highly centralized around Lenin &amp; the party</td>
+          </tr>
+          <tr>
+            <td>Coercive force</td>
+            <td>National Guard + revolutionary armies</td>
+            <td>Red Guards → Red Army</td>
+          </tr>
+          <tr>
+            <td>Outcome after ~10 years</td>
+            <td>Napoleonic dictatorship</td>
+            <td>One-party Soviet state</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Key Similarities</h4>
+          <p>Both began with moderate phases that failed. Both saw radical minorities take control during institutional breakdown. Both used emergency measures and violence against internal and external enemies. Both produced authoritarian outcomes rather than stable liberal democracy.</p>
+        </div>
+        <div class="card">
+          <h4>Key Differences</h4>
+          <p>The French Revolution was more ideologically diffuse. The Russian Revolution was driven by a disciplined party with a clear Marxist program. France’s revolution unfolded over a decade of shifting regimes; Russia’s October power transfer was rapid and relatively coordinated.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Primary sources:</strong> Lenin’s April Theses (1917) and the Decrees on Peace and Land show the Bolshevik plan of tying real popular demands to the taking of power. The French Declaration of the Rights of Man (1789) and Olympe de Gouges’s Declaration of the Rights of Woman (1791) show both the promise and the unfinished nature of revolutionary equality claims.
+      </div>
+    </section>
+
+    <section id="current">
+      <h2>Current Movement: Iran’s “Woman, Life, Freedom”</h2>
+      <p>
+        On 13 September 2022, 22-year-old Mahsa (Jina) Amini, a Kurdish woman from Saqqez, was taken by the morality police in Tehran because she was said to wear her hijab wrongly. She died three days later while in custody. Her death sparked protests across the country that soon took up the slogan “Woman, Life, Freedom” (Jin, Jiyan, Azadi).
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Background</h4>
+          <p>The Islamic Republic has enforced hijab and extensive social controls since 1979. Economic stagnation, youth unemployment, ethnic discrimination and political repression created discontent. Women have long been at the front line of resistance.</p>
+        </div>
+        <div class="card">
+          <h4>Key Actors</h4>
+          <p>Young women and schoolgirls have been the most visible force — removing hijabs, cutting hair in public and leading chants. University students, workers, bazaar merchants, artists and ethnic minorities (especially Kurds and Baluch) joined. The movement has remained largely leaderless and decentralized.</p>
+        </div>
+      </div>
+      <h3>Scale, Character &amp; Obstacles</h3>
+      <ul>
+        <li>Protests spread to all 31 provinces within weeks.</li>
+        <li>Public unveiling, burning of hijabs and direct confrontation with security forces became common.</li>
+        <li>The regime responded with mass arrests, internet blackouts, live fire and later executions. Hundreds of protesters were killed; thousands were detained.</li>
+        <li>Critical obstacles remain: the security apparatus (IRGC, Basij) has largely held, the movement lacks institutions capable of replacing the state, and open street protests declined under sustained repression.</li>
+      </ul>
+      <div class="callout">
+        The movement has already achieved a cultural shift: compulsory hijab enforcement has been visibly weakened in many urban areas and the slogan “Woman, Life, Freedom” has become a lasting symbol of resistance inside Iran and in the diaspora.
+      </div>
+    </section>
+
+    <section id="lessons">
+      <h2>Lessons: Connecting 1917 to Today</h2>
+      <p>
+        Applying the success criteria developed from the Russian and French cases to the Iranian movement reveals both strengths and critical gaps.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Success Factor</th>
+            <th>Russian 1917</th>
+            <th>Iran 2022–</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clear program for power</td>
+            <td>Yes – soviet power + concrete decrees</td>
+            <td>Partial – strong moral demand, weaker institutional plan</td>
+          </tr>
+          <tr>
+            <td>Organized force to seize institutions</td>
+            <td>Yes – Red Guards + soviet majorities</td>
+            <td>No – decentralized, no parallel institutions</td>
+          </tr>
+          <tr>
+            <td>Neutralization of security forces</td>
+            <td>Yes – mass mutiny in Petrograd</td>
+            <td>No – security forces largely held</td>
+          </tr>
+          <tr>
+            <td>Ability to survive counter-attack</td>
+            <td>Yes – won the Civil War</td>
+            <td>Unproven – repression has contained open revolt so far</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Recommendations Drawn from Historical Precedent</h3>
+      <div class="rec-list">
+        <div class="rec-item">
+          <div class="rec-num">1</div>
+          <div><strong>Build institutions</strong> — Historical success required organizations that could coordinate action and later administer power (soviets, revolutionary committees). Purely spontaneous street protests are powerful but temporary without structures.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">2</div>
+          <div><strong>Target the loyalty of the apparatus</strong> — Both the French and Russian cases turned when significant parts of the army or police refused orders or switched sides. Strategies that raise the cost of repression for security personnel matter.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">3</div>
+          <div><strong>Link demands to concrete material ones</strong> — “Peace, Land and Bread” gave the Bolsheviks a program that spoke to soldiers and peasants. Connecting gender freedom to economic relief and political voice broadens the coalition.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">4</div>
+          <div><strong>Prepare for the day after</strong> — Revolutions that only destroy the old order without a plan for governance often produce chaos or new authoritarianism. Clear transitional proposals reduce fear among potential supporters inside the state.</div>
+        </div>
+      </div>
+
+      <h3>Assessment of Trajectory</h3>
+      <p>
+        The Iranian movement has already changed the cultural landscape and demonstrated the regime’s deep legitimacy deficit. By the standards used here, however, it has not yet met the threshold of revolutionary success: sovereign power remains with the Islamic Republic, the security forces have not fractured, and no alternative institutional center has replaced the state.
+      </p>
+      <p>
+        History also shows that revolutions often fail in their first major wave and succeed only after multiple cycles of mobilization and learning. The Russian case itself required the 1905 Revolution before 1917 became possible. Continued pressure and the gradual erosion of regime cohesion could still shift the balance.
+      </p>
+    </section>
+
+    <section id="bibliography">
+      <h2>Bibliography</h2>
+      <p>Sources in MLA format.</p>
+
+      <h3>Russian Revolution</h3>
+      <ul class="bib-list">
+        <li>Lenin, V. I. “The April Theses.” 1917. <em>Marxists Internet Archive</em>, www.marxists.org/archive/lenin/works/1917/apr/04.htm. Primary source.</li>
+        <li>Figes, Orlando. <em>A People’s Tragedy: The Russian Revolution 1891–1924</em>. Penguin, 1998. Secondary source.</li>
+      </ul>
+
+      <h3>French Revolution</h3>
+      <ul class="bib-list">
+        <li>National Assembly of France. “Declaration of the Rights of Man and of the Citizen.” 1789. <em>Avalon Project</em>, Yale Law School, avalon.law.yale.edu/18th_century/rightsof.asp. Primary source.</li>
+        <li>Doyle, William. <em>The Oxford History of the French Revolution</em>. 3rd ed., Oxford University Press, 2018. Secondary source.</li>
+      </ul>
+
+      <h3>Iranian “Woman, Life, Freedom” Movement</h3>
+      <ul class="bib-list">
+        <li>“Iran’s Protest Movement, Explained.” <em>Vox</em>, 10 Dec. 2022, www.vox.com/2022/12/10/23499535/iran-protest-movement-explained.</li>
+        <li>Boroumand, Ladan. “Why Women Are Leading the Fight in Iran.” <em>Journal of Democracy</em>, Sept. 2022, www.journalofdemocracy.org/why-women-are-leading-the-fight-in-iran/.</li>
+        <li>Human Rights Activists News Agency (HRANA). “Woman, Life, Freedom: Comprehensive Report of 20 Days of Protest across Iran.” 2022, www.en-hrana.org/woman-life-freedom-comprehensive-report-of-20-days-of-protest-across-iran/.</li>
+      </ul>
+
+      <h3>Comparative</h3>
+      <ul class="bib-list">
+        <li>Skocpol, Theda. <em>States and Social Revolutions: A Comparative Analysis of France, Russia, and China</em>. Cambridge University Press, 1979.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Educational analysis of the Russian Revolution of 1917 and its relevance to later revolutionary movements.
+    </p>
+  </footer>
+</body>
+</html>
